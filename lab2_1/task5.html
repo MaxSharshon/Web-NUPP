@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 5</title>
+</head>
+<body>
+
+<script>
+  const dayNumber = parseInt(prompt("Введіть число від 1 до 31:"));
+
+  if (!isNaN(dayNumber) && dayNumber >= 1 && dayNumber <= 31) {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth();
+
+    const date = new Date(today.getFullYear(), today.getMonth(), dayNumber);
+    const dayNames = ["Неділя", "Понеділок", "Вівторок", "Середа", "Четвер", "П’ятниця", "Субота"];
+    const dayOfWeek = date.getDay();
+
+    document.write(`День тижня: ${dayNames[dayOfWeek]}`);
+  } else {
+    document.write("Введено некоректне число. Введіть значення від 1 до 31.");
+  }
+</script>
+
+</body>
+</html>

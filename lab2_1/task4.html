@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 4</title>
+</head>
+<body>
+
+<script>
+  // 1 дюйм = 2.54 см
+  const cm = parseFloat(prompt("Введіть довжину в сантиметрах:"));
+  
+  if (!isNaN(cm)) {
+    const inches = cm / 2.54;
+    alert("Довжина в дюймах: " + inches.toFixed(2));
+  } else {
+    alert("Будь ласка, введіть правильне число.");
+  }
+</script>
+
+</body>
+</html>
