@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1_2</title>
+</head>
+
+<body>
+
+  <a href="https://google.com">Google</a><br>
+  <a href="https://wikipedia.org">Wikipedia</a><br>
+  <a href="https://github.com">GitHub</a><br>
+
+  <script>
+    // Отримуємо всі <a>
+    const links = document.querySelectorAll('a');
+
+    // Функція-обробник
+    function setTitleFromHref(event) {
+      const link = event.currentTarget;
+      link.title = link.href;
+    }
+
+    // Додаємо обробники події
+    links.forEach(link => {
+      link.addEventListener('mouseover', setTitleFromHref);
+
+      setTimeout(() => {
+        link.removeEventListener('mouseover', setTitleFromHref);
+      }, 2000);
+    });
+  </script>
+
+</body>
+
+</html>

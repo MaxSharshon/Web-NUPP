@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1_3</title>
+</head>
+<body>
+
+<input type="text" value="Hello"><br>
+<input type="text" value="World"><br>
+<input type="text" value="JS"><br>
+
+<p id="demo">Here will be input value</p>
+
+<script>
+  const inputs = document.querySelectorAll('input');
+  const demoParagraph = document.getElementById('demo');
+
+  function showValueInParagraph(event) {
+    const input = event.currentTarget;
+    demoParagraph.textContent = input.value;
+  }
+
+  inputs.forEach(input => {
+    input.addEventListener('click', showValueInParagraph);
+  });
+</script>
+
+</body>
+</html>

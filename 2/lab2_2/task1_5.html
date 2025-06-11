@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1_5</title>
+</head>
+<body>
+
+<p>два</p>
+<p>три</p>
+<p>п’ять</p>
+
+<script>
+  const wordToNumber = {
+    'нуль': 0,
+    'один': 1,
+    'два': 2,
+    'три': 3,
+    'чотири': 4,
+    'п’ять': 5,
+    'шість': 6,
+    'сім': 7,
+    'вісім': 8,
+    'дев’ять': 9,
+    'десять': 10
+  };
+
+  const paragraphs = document.querySelectorAll('p');
+
+  paragraphs.forEach(p => {
+    p.addEventListener('click', () => {
+      const word = p.textContent.trim().toLowerCase();
+      const number = wordToNumber[word];
+
+      if (number !== undefined) {
+        p.textContent = number * number;
+         square;
+      } else {
+        p.textContent = 'Невідоме число';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 2</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      margin: 10px;
+      background-color: lightgray;
+      display: inline-block;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div></div>
+<div></div>
+<div></div>
+
+<script>
+  const divs = document.querySelectorAll('div');
+
+  function paintRed(event) {
+    const div = event.currentTarget;
+    div.style.backgroundColor = 'red';
+
+    div.removeEventListener('click', paintRed);
+    div.addEventListener('click', paintGreen);
+  }
+
+  function paintGreen(event) {
+    const div = event.currentTarget;
+    div.style.backgroundColor = 'green';
+
+    div.removeEventListener('click', paintGreen);
+    div.addEventListener('click', paintRed);
+  }
+
+  divs.forEach(div => {
+    div.addEventListener('click', paintRed);
+  });
+</script>
+
+</body>
+</html>

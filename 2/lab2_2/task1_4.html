@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1_4</title>
+</head>
+<body>
+
+<input type="text" value="Hello"><br>
+<input type="text" value="World"><br>
+<input type="text" value="JS"><br>
+
+<script>
+  const inputs = document.querySelectorAll('input');
+
+  inputs.forEach(input => {
+    function firstClickHandler(event) {
+      console.log(input.value);
+
+      input.removeEventListener('click', firstClickHandler);
+
+      input.addEventListener('click', subsequentClickHandler);
+    }
+
+    function subsequentClickHandler(event) {
+      alert(input.value);
+    }
+
+    input.addEventListener('click', firstClickHandler);
+  });
+</script>
+
+</body>
+</html>
